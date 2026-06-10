@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "qml-santanu-companion"
+version = "0.1.0"
+description = "Companion repository for studying Quantum Machine Learning with Python by Santanu Pattanayak."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Project contributors" }
+]
+keywords = [
+  "quantum-computing",
+  "quantum-machine-learning",
+  "cirq",
+  "qiskit",
+  "python"
+]
+classifiers = [
+  "Development Status :: 2 - Pre-Alpha",
+  "Intended Audience :: Education",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Education",
+  "Topic :: Scientific/Engineering"
+]
+dependencies = [
+  "matplotlib>=3.8",
+  "numpy>=1.26",
+  "scikit-learn>=1.3",
+  "scipy>=1.11"
+]
+
+[project.optional-dependencies]
+cirq = [
+  "cirq>=1.3"
+]
+qiskit = [
+  "qiskit>=1.0",
+  "qiskit-aer>=0.14"
+]
+notebooks = [
+  "ipykernel>=6.0",
+  "jupyterlab>=4.0",
+  "seaborn>=0.13"
+]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.5"
+]
+all = [
+  "cirq>=1.3",
+  "ipykernel>=6.0",
+  "jupyterlab>=4.0",
+  "qiskit>=1.0",
+  "qiskit-aer>=0.14",
+  "seaborn>=0.13"
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = ["-p", "no:cacheprovider"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = []

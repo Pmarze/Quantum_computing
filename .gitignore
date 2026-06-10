@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.Python
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+venv/
+env/
+.conda/
+conda-env/
+envs/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and generated artifacts
+data/raw/
+data/interim/
+data/processed/
+outputs/
+artifacts/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets
+.env
+.env.*
+!.env.example
