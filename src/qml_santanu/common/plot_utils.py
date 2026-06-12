@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 _COLORS = ['#4a90d9', '#e07b39', '#5cb85c', '#d9534f', '#9b59b6', '#1abc9c']
 
 
-def plot_counts(counts, title='Histograma de mediciones', shots=None):
+def plot_counts(counts, title='Histograma de mediciones'):
     """Grafica un histograma de conteos de medición cuántica.
 
     Acepta dicts con keys enteros (Cirq) o strings (Qiskit).
@@ -13,7 +13,7 @@ def plot_counts(counts, title='Histograma de mediciones', shots=None):
     valores = [counts[k] for k in etiquetas]
     etiquetas_display = [f'|{k}⟩' for k in etiquetas]
 
-    titulo = f'{title} ({shots} disparos)' if shots else title
+    titulo = f'{title} ({sum(valores)} disparos)'
 
     fig, ax = plt.subplots(figsize=(4, 3))
     barras = ax.bar(
