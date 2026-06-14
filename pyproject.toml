@@ -74,6 +74,7 @@ addopts = ["-p", "no:cacheprovider"]
 line-length = 88
 target-version = "py311"
 src = ["src", "tests"]
+exclude = ["notebooks"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]

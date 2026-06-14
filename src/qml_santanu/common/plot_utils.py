@@ -23,7 +23,7 @@ def plot_counts(counts, title='Histograma de mediciones'):
     )
 
     margen = max(valores) * 0.03
-    for barra, v in zip(barras, valores):
+    for barra, v in zip(barras, valores, strict=True):
         ax.text(
             barra.get_x() + barra.get_width() / 2,
             barra.get_height() + margen,
